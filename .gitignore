@@ -1,2 +1,3 @@
 .idea
 .env
+/kind-test/dockerconfigjson.yml
