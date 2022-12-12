@@ -1,31 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cinema-service
+  name: devops-toolkit
   labels:
-    app: cinema-service
+    app: devops-toolkit
 spec:
   selector:
     matchLabels:
-      app: cinema-service
+      app: devops-toolkit
   template:
     metadata:
       labels:
-        app: cinema-service
+        app: devops-toolkit
     spec:
       containers:
-        - name: cinema-service
+        - name: devops-toolkit
           image: ghcr.io/fh-erfurt/microkino:cinemaservice
+          imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           livenessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
           resources:
             limits:
               cpu: 100m
@@ -35,3 +36,5 @@ spec:
               memory: 128Mi
       imagePullSecrets:
         - name: dockerconfigjson-github-com
+# ghcr.io/fh-erfurt/microkino:cinemaservice
+# vfarcic/devops-toolkit-series
