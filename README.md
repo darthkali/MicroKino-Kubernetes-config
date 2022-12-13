@@ -120,3 +120,11 @@ data:
   .dockerconfigjson: <base-64-encoded-docker-config>
 ```
 
+
+### Create Deployment
+
+``` shell
+➜ k create deployment postgres --image=postgres:latest --dry-run=client -o=yaml > postgres-deployment.yml
+```
+
+

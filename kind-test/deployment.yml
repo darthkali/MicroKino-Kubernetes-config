@@ -15,25 +15,28 @@ spec:
     spec:
       containers:
         - name: devops-toolkit
+          env:
+            - name: POSTGRES_HOST
+              value: postgres
           image: ghcr.io/fh-erfurt/microkino:cinemaservice
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-          resources:
-            limits:
-              cpu: 100m
-              memory: 256Mi
-            requests:
-              cpu: 80m
-              memory: 128Mi
+#          livenessProbe:
+#            httpGet:
+#              path: /
+#              port: 80
+#          readinessProbe:
+#            httpGet:
+#              path: /
+#              port: 80
+#          resources:
+#            limits:
+#              cpu: 100m
+#              memory: 256Mi
+#            requests:
+#              cpu: 80m
+#              memory: 128Mi
       imagePullSecrets:
         - name: dockerconfigjson-github-com
 # ghcr.io/fh-erfurt/microkino:cinemaservice
