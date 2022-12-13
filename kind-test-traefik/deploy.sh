@@ -15,14 +15,14 @@ kubectl create -f traefik/traefik-service-acc.yaml \
 # \
 ### create postgres
 #kubectl apply -f postgres/postgres-deployment.yml \
-#               -f postgres/postgres-service.yml
+#              -f postgres/postgres-service.yml
 #
 ### create secrets
 #kubectl apply -f dockerconfigjson.yml
 #
 ### create service
 #kubectl apply -f deployment.yml \
-#               -f service.yml
+#              -f service.yml
 #
 #
 #echo "Set Port Forwarding with specific service name. Have a look into the Shell Script for more details."
