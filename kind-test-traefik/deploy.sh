@@ -11,7 +11,8 @@ kubectl create -f traefik/traefik-rbac.yaml \
 
 helm repo add traefik https://traefik.github.io/charts
 helm repo update
-helm install --values traefik/values.yml traefik/traefik --namespace kube-system
+helm install --values traefik/values.yml traefik/traefik
+
 # \
 ### create postgres
 #kubectl apply -f postgres/postgres-deployment.yml \
