@@ -3,6 +3,30 @@
 The Kubernetes config repository for the corresponding MicroKino Microservices
 https://github.com/fh-erfurt/MicroKino
 
+
+## Setup
+### Package-Managers:
+**Mac**
+- [Homebrew](https://brew.sh/)
+
+**Windows**
+- [Chocolatey](https://chocolatey.org/)
+
+### Packages:
+#### Helm
+
+**Mac**
+```bash
+brew install helm
+```
+
+**Windows**
+```bash
+choco install kubernetes-helm
+```
+
+
+
 ## Kind
 
 ### Installation
