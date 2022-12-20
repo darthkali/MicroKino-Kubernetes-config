@@ -5,13 +5,13 @@ kind create cluster --config kind-cluster.yml
 
 ## create traefik
 #https://medium.com/kubernetes-tutorials/deploying-traefik-as-ingress-controller-for-your-kubernetes-cluster-b03a0672ae0c
-kubectl create -f traefik/traefik-service-acc.yaml \
-               -f traefik/traefik-cr.yaml \
-               -f traefik/traefik-crb.yaml \
-               -f traefik/traefik-deployment.yaml \
-               -f traefik/traefik-svc.yaml \
-               -f traefik/traefik-webui-svc.yaml \
-               -f traefik/traefik-ingress.yaml
+kubectl create -f traefik/traefik-rbac.yaml \
+  -f traefik/traefik-deployment.yaml \
+  -f traefik/traefik-ingress.yaml
+
+helm repo add traefik https://traefik.github.io/charts
+helm repo update
+helm install --values traefik/values.yml traefik/traefik --namespace kube-system
 # \
 ### create postgres
 #kubectl apply -f postgres/postgres-deployment.yml \
