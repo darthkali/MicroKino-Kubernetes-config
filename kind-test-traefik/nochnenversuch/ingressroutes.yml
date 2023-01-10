@@ -1,32 +1,47 @@
+#apiVersion: traefik.containo.us/v1alpha1
+#kind: IngressRoute
+#metadata:
+#  name: simpleingressroute
+#  namespace: default
+#spec:
+#  entryPoints:
+#    - web
+#  routes:
+#    - match: Host(`localhost`) && PathPrefix(`/notls`)
+#      kind: Rule
+#      services:
+#        - name: whoami
+#          port: 80
+#
+#---
+#apiVersion: traefik.containo.us/v1alpha1
+#kind: IngressRoute
+#metadata:
+#  name: ingressroutetls
+#  namespace: default
+#spec:
+#  entryPoints:
+#    - websecure
+#  routes:
+#    - match: Host(`localhost`) && PathPrefix(`/tls`)
+#      kind: Rule
+#      services:
+#        - name: whoami
+#          port: 80
+#  tls:
+#    certResolver: myresolver
+#---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: simpleingressroute
+  name: cinema
   namespace: default
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`localhost`) && PathPrefix(`/notls`)
+    - match: Host(`localhost`) && PathPrefix(`/cinema`)
       kind: Rule
       services:
-        - name: whoami
+        - name: cinema-service
           port: 80
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: ingressroutetls
-  namespace: default
-spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`localhost`) && PathPrefix(`/tls`)
-      kind: Rule
-      services:
-        - name: whoami
-          port: 80
-  tls:
-    certResolver: myresolver

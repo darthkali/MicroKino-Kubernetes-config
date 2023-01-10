@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cinema-service
+  namespace: default
+  labels:
+    app: cinema-service
+spec:
+  selector:
+    matchLabels:
+      app: cinema-service
+  template:
+    metadata:
+      labels:
+        app: cinema-service
+    spec:
+      containers:
+        - name: cinema-service
+          env:
+            - name: POSTGRES_HOST
+              value: postgres
+          image: ghcr.io/fh-erfurt/microkino:cinemaservice
+          imagePullPolicy: Always
+          ports:
+            - name: web
+              containerPort: 80
+      imagePullSecrets:
+        - name: dockerconfigjson-github-com
