@@ -44,4 +44,18 @@ spec:
       kind: Rule
       services:
         - name: cinema-service
-          port: 80
+          port: 8091
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`localhost`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
