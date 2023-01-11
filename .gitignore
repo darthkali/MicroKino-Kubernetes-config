@@ -1,3 +1,3 @@
 .idea
 .env
-/kind-test-one-service/dockerconfigjson.yml
+/legacy/kind-test-one-service/dockerconfigjson.yml

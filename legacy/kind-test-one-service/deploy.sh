@@ -1,3 +1,4 @@
+kind delete cluster --name micro-kino-cluster
 # create cluster
 kind create cluster --config kind-cluster.yml
 
@@ -15,7 +16,7 @@ kubectl apply -f service.yml
 
 echo "Set Port Forwarding with specific service name. Have a look into the Shell Script for more details."
 ## find name with the following command:
-#echo $(kubectl get pods -l app=cinema-service -o custom-columns=:metadata.name)
+echo $(kubectl get pods -l app=cinema-service -o custom-columns=:metadata.name)
 
 ## port-forward
-#kubectl port-forward cinema-service-78d55fd998-hftcd -n default 8090:8090
+kubectl port-forward cinema-service-78d55fd998-hftcd -n default 8090:8090
