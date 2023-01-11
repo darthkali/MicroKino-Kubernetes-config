@@ -1,21 +1,6 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: cinema
-  namespace: default
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`localhost`) && PathPrefix(`/cinema`)
-      kind: Rule
-      services:
-        - name: cinema-service
-          port: 8091
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
   name: dashboard
 spec:
   entryPoints:
@@ -26,3 +11,63 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
+--- # cinema-service-route
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: cinema-service-route
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`localhost`) && PathPrefix(`/cinema`)
+      kind: Rule
+      services:
+        - name: cinema-service
+          port: 8091
+--- # booking-service-route
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: booking-service-route
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`localhost`) && PathPrefix(`/booking`)
+      kind: Rule
+      services:
+        - name: booking-service
+          port: 8091
+--- # show-service-route
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: show-service-route
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`localhost`) && PathPrefix(`/show`)
+      kind: Rule
+      services:
+        - name: show-service
+          port: 8091
+--- # movie-service-route
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: movie-service-route
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`localhost`) && PathPrefix(`/movie`)
+      kind: Rule
+      services:
+        - name: movie-service
+          port: 8091

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: booking-service
+  namespace: default
+  labels:
+    app: booking-service
+spec:
+  selector:
+    matchLabels:
+      app: booking-service
+  template:
+    metadata:
+      labels:
+        app: booking-service
+    spec:
+      containers:
+        - name: booking-service
+          env:
+            - name: POSTGRES_HOST
+              value: postgres
+          image: ghcr.io/fh-erfurt/microkino:bookingservice
+          imagePullPolicy: Always
+#          ports:
+#            - name: web
+#              containerPort: 8090
+      imagePullSecrets:
+        - name: dockerconfigjson-github-com
