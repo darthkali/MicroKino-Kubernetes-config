@@ -1,26 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: zookeeper
+  name: zookeeper-deployment
   labels:
     app: zookeeper
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: zookeeper
-  replicas: 1
   template:
     metadata:
       labels:
         app: zookeeper
     spec:
       containers:
-        - env:
-            - name: ZOOKEEPER_ID
-              value: "1"
-            - name: ZOOKEEPER_SERVER_1
-              value: zookeeper
-          name: zookeeper
-          image: wurstmeister/zookeeper
+        - name: zookeeper
+          image: confluentinc/cp-zookeeper:7.0.1
           ports:
             - containerPort: 2181
+          env:
+            - name: ZOOKEEPER_CLIENT_PORT
+              value: "2181"
+            - name: ZOOKEEPER_TICK_TIME
+              value: "2000"
+
+
+#            - name: ZOOKEEPER_ID
+#              value: "1"
+#            - name: ZOOKEEPER_SERVER_1
+#              value: zookeeper-service
+
+
