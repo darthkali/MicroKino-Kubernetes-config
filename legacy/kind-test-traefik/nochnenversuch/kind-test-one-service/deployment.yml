@@ -19,7 +19,7 @@ spec:
           env:
             - name: POSTGRES_HOST
               value: postgres
-          image: ghcr.io/fh-erfurt/microkino:cinemaservice
+          image: ghcr.io/darthkali/microkino:cinemaservice
           imagePullPolicy: Always
 #          ports:
 #            - name: web

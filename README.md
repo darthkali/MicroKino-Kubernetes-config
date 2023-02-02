@@ -1,7 +1,7 @@
 # MicroKino-Kubernetes-config
 
 The Kubernetes config repository for the corresponding MicroKino Microservices
-https://github.com/fh-erfurt/MicroKino
+https://github.com/darthkali/MicroKino
 
 ## Hinweis
 Unter Verwendung von Linux muss ggf. mit `sudo` die Berechitung erteilt werden.
@@ -120,7 +120,7 @@ Für jede Route muss die Serveradresse angepasst werden. Diese muss mit der Adre
 - match: Host(`<server-adresse>`) && PathPrefix(`/cinema`)
 #z.B.:
 - match: Host(`localhost`) && PathPrefix(`/cinema`)
-- match: Host(`microkino.ai.fh-erfurt.de`) && PathPrefix(`/cinema`)
+- match: Host(`microkino.ai.darthkali.de`) && PathPrefix(`/cinema`)
 ```
 
 ## Starten des Clusters
@@ -140,8 +140,8 @@ sudo kubectl port-forward --address 0.0.0.0 service/traefik 80:80 8080:8080 443:
 ```
 
 ### Endpoints
-- http://microkino.ai.fh-erfurt.de/cinema/cinemas
-- http://microkino.ai.fh-erfurt.de/booking/creditCards
+- http://microkino.ai.darthkali.de/cinema/cinemas
+- http://microkino.ai.darthkali.de/booking/creditCards
 - ...
 
 ---

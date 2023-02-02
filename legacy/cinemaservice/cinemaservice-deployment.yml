@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cinemaservice
-          image: ghcr.io/fh-erfurt/microkino:cinemaservice
+          image: ghcr.io/darthkali/microkino:cinemaservice
           ports:
             - containerPort: 8080
 

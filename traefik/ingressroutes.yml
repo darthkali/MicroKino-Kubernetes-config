@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`microkino.ai.fh-erfurt.de`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+    - match: Host(`localhost`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
       kind: Rule
       services:
         - name: api@internal
@@ -21,7 +21,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`microkino.ai.fh-erfurt.de`) && PathPrefix(`/cinema`)
+    - match: Host(`localhost`) && PathPrefix(`/cinema`)
       kind: Rule
       services:
         - name: cinema-service
@@ -36,7 +36,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`microkino.ai.fh-erfurt.de`) && PathPrefix(`/booking`)
+    - match: Host(`localhost`) && PathPrefix(`/booking`)
       kind: Rule
       services:
         - name: booking-service
@@ -51,7 +51,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`microkino.ai.fh-erfurt.de`) && PathPrefix(`/show`)
+    - match: Host(`localhost`) && PathPrefix(`/show`)
       kind: Rule
       services:
         - name: show-service
@@ -66,7 +66,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`microkino.ai.fh-erfurt.de`) && PathPrefix(`/movie`)
+    - match: Host(`localhost`) && PathPrefix(`/movie`)
       kind: Rule
       services:
         - name: movie-service

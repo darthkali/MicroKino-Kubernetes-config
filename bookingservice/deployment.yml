@@ -19,7 +19,7 @@ spec:
           env:
             - name: POSTGRES_HOST
               value: postgres
-          image: ghcr.io/fh-erfurt/microkino:bookingservice
+          image: ghcr.io/darthkali/microkino:bookingservice
           imagePullPolicy: Always
       imagePullSecrets:
         - name: dockerconfigjson-github-com

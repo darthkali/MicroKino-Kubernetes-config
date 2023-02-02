@@ -21,7 +21,7 @@ spec:
               value: postgres
             - name: KAFKA_SERVER
               value: kafka-service:9092
-          image: ghcr.io/fh-erfurt/microkino:showservice
+          image: ghcr.io/darthkali/microkino:showservice
           imagePullPolicy: Always
       imagePullSecrets:
         - name: dockerconfigjson-github-com
