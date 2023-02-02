@@ -140,9 +140,9 @@ sudo kubectl port-forward --address 0.0.0.0 service/traefik 80:80 8080:8080 443:
 ```
 
 ### Endpoints
-http://microkino.ai.fh-erfurt.de/cinema/cinemas
-http://microkino.ai.fh-erfurt.de/booking/creditCards
-...
+- http://microkino.ai.fh-erfurt.de/cinema/cinemas
+- http://microkino.ai.fh-erfurt.de/booking/creditCards
+- ...
 
 ---
 ## Zusätzliche Kommandos
