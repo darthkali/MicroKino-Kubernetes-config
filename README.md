@@ -191,3 +191,8 @@ kubectl get nodes
 ``` shell
 kind delete cluster --name microkino-cluster
 ```
+
+## Nächste Schritte
+- Workflow für automatisiertes Deployment neuer Versionen inkl. Test
+- Unzuverlässigkeit vom Kafka-Dienst beheben
+- Tracing + Metrics
