@@ -23,8 +23,5 @@ spec:
               value: kafka-service:9092
           image: ghcr.io/fh-erfurt/microkino:showservice
           imagePullPolicy: Always
-#          ports:
-#            - name: web
-#              containerPort: 8090
       imagePullSecrets:
         - name: dockerconfigjson-github-com

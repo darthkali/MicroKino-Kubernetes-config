@@ -21,8 +21,5 @@ spec:
               value: postgres
           image: ghcr.io/fh-erfurt/microkino:cinemaservice
           imagePullPolicy: Always
-#          ports:
-#            - name: web
-#              containerPort: 8090
       imagePullSecrets:
         - name: dockerconfigjson-github-com
