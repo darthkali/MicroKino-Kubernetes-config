@@ -32,7 +32,7 @@ spec:
             - --entrypoints.websecure.Address=:4443
             - --providers.kubernetescrd
             - --certificatesresolvers.myresolver.acme.tlschallenge
-            - --certificatesresolvers.myresolver.acme.email=danny.steinbrecher@fh-erfurt.de
+            - --certificatesresolvers.myresolver.acme.email=foo@fh-erfurt.te
             - --certificatesresolvers.myresolver.acme.storage=acme.json
             - --api.dashboard=true
             # Please note that this is the staging Let's Encrypt server.

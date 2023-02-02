@@ -111,26 +111,33 @@ data:
 ``` shell
 docker login ghcr.io -u <github-username> -p <personal-access-token>
 ```
+
+### Server Adresse anpassen
+In der Datei `traefik/ingressroutes.yaml` muss die Serveradresse angepasst werden:
+
+Für jede Route muss die Serveradresse angepasst werden. Diese muss mit der Adresse des Servers übereinstimmen, auf dem die Microservices laufen.  Dies kann euer Server sein oder wenn ihr es Lokal ausführt, dann ist es `localhost`.
+```yaml
+- match: Host(`<server-adresse>`) && PathPrefix(`/cinema`)
+#z.B.:
+- match: Host(`localhost`) && PathPrefix(`/cinema`)
+- match: Host(`microkino.ai.fh-erfurt.de`) && PathPrefix(`/cinema`)
+```
+
 ## Starten des Clusters
 dem deploy.sh Script im root Ordner passende Rechte geben (muss nur einmalig gemacht werden)
 ``` shell
 chmod +x deploy.sh
 ```
 
-
-
 Starten des Kubernetes Clusters über die Konfigurationsdatei (deploy.sh)
 ``` shell
 ./deploy.sh
 ```
 
-
 Wenn alle Pods laufen, dann muss noch das PortForwarding eingerichtet werden:
 ```shell
-kubectl port-forward --address 0.0.0.0 service/traefik 8000:8000 8080:8080 443:4443 -n default
+sudo kubectl port-forward --address 0.0.0.0 service/traefik 80:80 8080:8080 443:4443 -n default
 ```
-
-
 
 ---
 ## Zusätzliche Kommandos
