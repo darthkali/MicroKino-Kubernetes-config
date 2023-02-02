@@ -28,11 +28,11 @@ spec:
           args:
             - --api.insecure
             - --accesslog
-            - --entrypoints.web.Address=:8000
+            - --entrypoints.web.Address=:80
             - --entrypoints.websecure.Address=:4443
             - --providers.kubernetescrd
             - --certificatesresolvers.myresolver.acme.tlschallenge
-            - --certificatesresolvers.myresolver.acme.email=foo@you.com
+            - --certificatesresolvers.myresolver.acme.email=danny.steinbrecher@fh-erfurt.de
             - --certificatesresolvers.myresolver.acme.storage=acme.json
             - --api.dashboard=true
             # Please note that this is the staging Let's Encrypt server.
@@ -40,7 +40,7 @@ spec:
             - --certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
           ports:
             - name: web
-              containerPort: 8000
+              containerPort: 80
             - name: websecure
               containerPort: 4443
             - name: admin

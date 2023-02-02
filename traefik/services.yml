@@ -7,7 +7,7 @@ spec:
   ports:
     - protocol: TCP
       name: web
-      port: 8000
+      port: 80
     - protocol: TCP
       name: admin
       port: 8080
