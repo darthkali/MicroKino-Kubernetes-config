@@ -139,10 +139,6 @@ Wenn alle Pods laufen, dann muss noch das PortForwarding eingerichtet werden:
 sudo kubectl port-forward --address 0.0.0.0 service/traefik 80:80 8080:8080 443:4443 -n default
 ```
 
-### Endpoints
-- http://microkino.ai.darthkali.de/cinema/cinemas
-- http://microkino.ai.darthkali.de/booking/creditCards
-- ...
 
 ---
 ## Zusätzliche Kommandos
