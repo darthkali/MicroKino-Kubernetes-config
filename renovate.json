@@ -5,6 +5,6 @@
     ":prHourlyLimitNone"
   ],
   "kubernetes": {
-    "fileMatch": ["\\.yml$"]
+    "fileMatch": ["\\.yml$", "\\.yaml$"]
   }
 }
