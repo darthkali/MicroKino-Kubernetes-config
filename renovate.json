@@ -5,5 +5,10 @@
   ],
   "kubernetes": {
     "fileMatch": ["\\.yml$"]
-  }
+  },
+  "packageRules": [
+    {
+      "prHourlyLimit": 0
+    }
+  ]
 }
