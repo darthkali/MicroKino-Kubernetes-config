@@ -3,11 +3,11 @@
   "extends": [
     "config:base"
   ],
-  "kubernetes":[
+  "kubernetes":{
     "fileMatch": 
       [
         "\\.yaml$",
-        "\\.yml$",
+        "\\.yml$"
       ]
-  ]
+    }
 }
