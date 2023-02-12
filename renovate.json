@@ -6,5 +6,8 @@
   ],
   "kubernetes": {
     "fileMatch": ["\\.yml$", "\\.yaml$"]
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true
   }
 }
