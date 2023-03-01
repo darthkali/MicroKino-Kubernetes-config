@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: broker
-          image: confluentinc/cp-kafka:7.0.1
+          image: confluentinc/cp-kafka:7.3.2
           ports:
             - containerPort: 9092
           env:
