@@ -1,22 +1,21 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": [
-		"config:base"
-	],
-	"prHourlyLimit": 8,
-	"timezone": "Europe/Berlin",
-	"schedule": [
-	"after 5am every weekday",
-	"before 1pm every weekday"
-	],
-	"packageRules": [
-		{
-		"matchUpdateTypes": ["minor", "patch"],
-		"automergeType": "branch",
-		"automerge": true,
-		}
-	],
-	"kubernetes": {
-		"fileMatch": ["\\.yml$", "\\.yaml$"]
-	}
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "prHourlyLimit": 8,
+  "timezone": "Europe/Berlin",
+  "schedule": [
+    "after 5am every weekday",
+    "before 1pm every weekday"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automergeType": "branch",
+      "automerge": true
+    }
+  ],
+  "kubernetes": {"fileMatch": ["\\.yml$", "\\.yaml$"]
+  }
 }
