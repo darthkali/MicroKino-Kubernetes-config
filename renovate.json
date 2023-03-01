@@ -16,8 +16,8 @@
 		"automergeType": "branch",
 		"automerge": true,
 		}
-	]
+	],
 	"kubernetes": {
-	"fileMatch": ["\\.yml$", "\\.yaml$"]
+		"fileMatch": ["\\.yml$", "\\.yaml$"]
 	}
 }
