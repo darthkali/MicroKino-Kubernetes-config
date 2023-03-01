@@ -1,7 +1,0 @@
-dashboard:
-  enabled: true
-  domain: traefik-ui.test
-kubernetes:
-  namespaces:
-    - default
-    - kube-system
